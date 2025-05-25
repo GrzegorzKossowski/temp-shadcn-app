@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Checkbox from "@/components/ui/checkbox";
+import { Link } from "@/components/ui/link";
 import { useTheme } from "next-themes";
 import { useState } from "react";
 
@@ -13,14 +14,16 @@ export default function Home() {
         variant={"default"}
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       ></Button>
+      <Link href="/" variant={"destructive"}>
+        link
+      </Link>
       <div>
-
-      <Checkbox id='cb' checked={chBox} onCheckedChange={() => setchBox((prev) => !prev)} />
-        <label htmlFor="cb" className="select-none">Label {chBox ? "true": "false"}</label>
+        <Checkbox
+          id="cb"
+          checked={chBox}
+          onCheckedChange={() => setchBox((prev) => !prev)}
+        />
       </div>
-      <Checkbox />
-      <Checkbox />
-      <Checkbox />
     </div>
   );
 }
